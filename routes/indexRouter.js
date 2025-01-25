@@ -19,9 +19,9 @@ indexRouter.get("/", (req, res) => {
      res.render("index", { messages: messages });
 });
 indexRouter.post("/new", (req, res) => {
-     // req.body
-     // messages.push({ text: messageText, user: messageUser, added: new Date() });
-     // res.redirect("/") 
+     // TODO: dont trust user input
+     messages.push({ text: req.body.messageText, user: req.body.messageName, added: new Date() });
+     res.redirect("/") 
 
 });
 
